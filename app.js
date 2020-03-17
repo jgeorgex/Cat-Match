@@ -21,10 +21,10 @@ app.use(
   express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 );
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 
-app.listen(3000, function() {
+app.listen(3000, () => {
   debug(`listening on port ${chalk.green('3000')}`);
 });

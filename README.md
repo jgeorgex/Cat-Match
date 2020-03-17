@@ -33,3 +33,11 @@ Path - To simplify refrences to file directory paths by providing the join metho
 Bootstrap - To make CSS easier.
 
 jQuery - For event handling
+
+esLint - Linter to keep formating in good shape.
+
+## Notes
+
+$ npm install - to install all necessary dependancies
+$ npm start - starts server and outputs port
+\$ npm run lint - runs esLint
