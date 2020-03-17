@@ -29,3 +29,7 @@ I can delete a cat in my shortlist <br>
 Chalk, debug and morgan - to help gain visibility when debugging.
 
 Path - To simplify refrences to file directory paths by providing the join method.
+
+Bootstrap - To make CSS easier.
+
+jQuery - For event handling
