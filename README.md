@@ -36,6 +36,8 @@ jQuery - For event handling
 
 esLint - Linter to keep formating in good shape.
 
+nodemon - So you no longer have to restart server after making changes to the codebase.
+
 ## Notes
 
 $ npm install - to install all necessary dependancies
