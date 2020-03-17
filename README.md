@@ -40,6 +40,6 @@ nodemon - So you no longer have to restart server after making changes to the co
 
 ## Notes
 
-$ npm install - to install all necessary dependancies
-$ npm start - starts server and outputs port
-\$ npm run lint - runs esLint
+$ npm install - to install all necessary dependancies <br>
+$ npm start - starts server and outputs port <br>
+\$ npm run lint - runs esLint <br>
