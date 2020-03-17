@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jgeorgex/Cat-Match/issues"
   },
-  "homepage": "https://github.com/jgeorgex/Cat-Match#readme"
+  "homepage": "https://github.com/jgeorgex/Cat-Match#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
