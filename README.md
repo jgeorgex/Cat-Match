@@ -23,3 +23,9 @@ I can upload an image and information about a new cat to my shortlist <br>
 As a user <br>
 So I can narrow down my shortlist <br>
 I can delete a cat in my shortlist <br>
+
+## Tools
+
+Chalk, debug and morgan - to help gain visibility when debugging.
+
+Path - To simplify refrences to file directory paths by providing the join method.
