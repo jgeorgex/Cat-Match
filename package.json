@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/jgeorgex/Cat-Match#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "chalk": "^3.0.0",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
   }
 }
