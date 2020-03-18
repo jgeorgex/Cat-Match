@@ -25,7 +25,13 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('index', { list: ['a', 'b'], title: 'Cat Match' });
+  res.render('index', {
+    nav: [
+      { link: '/login', title: 'LogIn' },
+      { link: '/SignUp', title: 'Sign Up' }
+    ],
+    title: 'Cat Match'
+  });
 });
 
 app.listen(port, () => {
