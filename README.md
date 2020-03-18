@@ -38,6 +38,8 @@ esLint - Linter to keep formating in good shape.
 
 nodemon - So you no longer have to restart server after making changes to the codebase.
 
+ejs - To dynamically render html with embeded JavaScript.
+
 ## Notes
 
 $ npm install - to install all necessary dependancies <br>

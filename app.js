@@ -22,8 +22,10 @@ app.use(
   express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 );
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/index.html'));
+  res.render('index', { list: ['a', 'b'], title: 'Cat Match' });
 });
 
 app.listen(port, () => {
