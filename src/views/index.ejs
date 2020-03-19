@@ -70,17 +70,23 @@
         >
           <div class="col-lg-10 align-self-end">
             <h1 class="text-uppercase text-white font-weight-bold">
-              FIND YOUR PERFECT CAT!
+              FIND YOUR PUUURFECT CAT!
             </h1>
             <hr class="divider my-4" />
           </div>
           <div class="col-lg-8 align-self-baseline">
             <p class="text-white-75 font-weight-light mb-5">
-            Tell Cat Match what charecteristics you want in a cat and it will tell you which breed is the best match for you.
+                Tell Cat Match what characteristics you want in a cat. It will tell you which breeds are best for you.
+              <form id="cat-finder" method="POST" action="/shortlist">
+                <label for="dogfriendly">Do you want a Cat that get's on with Dogs?</label>
+                <input type="radio" id="yesdog" name="dogfriendly" value="yesdog">
+                <label for="yes">Yes</label>
+                <input type="radio" id="nodog" name="dogfriendly" value="nodog">
+                <label for="no">No</label><br>
+                <a class="btn btn-primary btn-xl" input type="submit">
+                Find Your Cat!</a>
+              </form>
             </p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about"
-              >Find Out More</a
-            >
           </div>
         </div>
       </div>

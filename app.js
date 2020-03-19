@@ -3,10 +3,13 @@ const chalk = require('chalk');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
 const loginRouter = express.Router();
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, '/public/')));
@@ -43,6 +46,11 @@ app.get('/', (req, res) => {
     ],
     title: 'Cat Match'
   });
+});
+
+app.post('/shortlist', urlencodedParser, (req, res) => {
+  res.send(req.body);
+  debug(req.body);
 });
 
 app.listen(port, () => {
