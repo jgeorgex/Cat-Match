@@ -49,8 +49,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/shortlist', urlencodedParser, (req, res) => {
-  res.send(req.body);
   debug(req.body);
+  console.log(req.body);
+  res.send(req.body);
 });
 
 app.listen(port, () => {
