@@ -76,16 +76,28 @@
           </div>
           <div class="col-lg-8 align-self-baseline">
             <p class="text-white-75 font-weight-light mb-5">
-                Tell Cat Match what characteristics you want in a cat. It will tell you which breeds are best for you.
-              <form id="cat-finder" method="POST" action="/shortlist">
-                <label for="dogfriendly">Do you want a Cat that get's on with Dogs?</label>
-                <input type="radio" id="yesdog" name="dogfriendly" value="yesdog">
-                <label for="yes">Yes</label>
-                <input type="radio" id="nodog" name="dogfriendly" value="nodog">
-                <label for="no">No</label><br>
-                <a class="btn btn-primary btn-xl" input type="submit">
-                Find Your Cat!</a>
+                Tell Cat Match what characteristics you want in a cat. <br>It will tell you which breeds are best for you....
+              <form id="cat-finder" method="post" action="/shortlist">
+                <label for="dog-friendly">Do you want a dog friendly cat?</label>
+                <select id="dog-friendly" name="dog-friendly">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                <label for="lap-cat">Do you want a cat that will spend time sitting on your lap?</label>
+                <select id="lap-cat" name="lap-cat">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </select>
+              <label for="child-friendly">Does your cat need to get on well well with children?</label>
+              <select id="child-friendly" name="child-friendly">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select><br><br>
+              <!-- <a class="btn btn-primary btn-xl" type="submit" value="Submit">Find Your Cat!</a> -->
+                <input type="submit" value="Submit">
               </form>
+              </select>
             </p>
           </div>
         </div>
