@@ -50,7 +50,15 @@ app.get('/', (req, res) => {
 
 app.post('/shortlist', urlencodedParser, (req, res) => {
   debug(req.body);
-  res.send(req.body);
+  const choices = req.body;
+  debug(choices);
+  const dogChoice = choices['dog-friendly'];
+  debug(dogChoice);
+  if (dogChoice === 'yes') {
+    res.send('American Bobtail');
+  } else {
+    res.send('All the cats');
+  }
 });
 
 app.listen(port, () => {
