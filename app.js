@@ -48,17 +48,36 @@ app.get('/', (req, res) => {
   });
 });
 
-app.post('/shortlist', urlencodedParser, (req, res) => {
-  debug(req.body);
+function catSelector() {
+  return 'American Bobtail';
+}
+
+const cat = catSelector(urlencodedParser, (req, res) => {
   const choices = req.body;
-  debug(choices);
   const dogChoice = choices['dog-friendly'];
-  debug(dogChoice);
   if (dogChoice === 'yes') {
-    res.send('American Bobtail');
+    const cat = 'American Bobtail';
   } else {
-    res.send('All the cats');
-  }
+    const cat = 'All the cats';
+  });
+});
+
+app.post('/shortlist', urlencodedParser, (req, res) => {
+  // const choices = req.body;
+  // const dogChoice = choices['dog-friendly'];
+  // if (dogChoice === 'yes') {
+  //   const cat = 'American Bobtail';
+  // } else {
+  //   const cat = 'All the cats';
+  // }
+  res.render('shortlist', {
+    nav: [
+      { link: '/login', title: 'LogIn' },
+      { link: '/SignUp', title: 'Sign Up' }
+    ],
+    title: 'Cat Match',
+    recomendation: cat
+  });
 });
 
 app.listen(port, () => {
