@@ -48,28 +48,16 @@ app.get('/', (req, res) => {
   });
 });
 
-function catSelector() {
-  return 'American Bobtail';
+function catSelector(selection) {
+  if (selection === 'yes') {
+    return 'American Bobtail';
+  }
+  return 'All the cats';
 }
 
-const cat = catSelector(urlencodedParser, (req, res) => {
-  const choices = req.body;
-  const dogChoice = choices['dog-friendly'];
-  if (dogChoice === 'yes') {
-    const cat = 'American Bobtail';
-  } else {
-    const cat = 'All the cats';
-  });
-});
+const cat = catSelector('no');
 
 app.post('/shortlist', urlencodedParser, (req, res) => {
-  // const choices = req.body;
-  // const dogChoice = choices['dog-friendly'];
-  // if (dogChoice === 'yes') {
-  //   const cat = 'American Bobtail';
-  // } else {
-  //   const cat = 'All the cats';
-  // }
   res.render('shortlist', {
     nav: [
       { link: '/login', title: 'LogIn' },
