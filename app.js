@@ -58,6 +58,11 @@ function catSelector(selection) {
 const cat = catSelector('no');
 
 app.post('/shortlist', urlencodedParser, (req, res) => {
+  debug(req.body);
+  res.send(req.body['dog-friendly']);
+});
+
+app.post('/shortlist', urlencodedParser, (req, res) => {
   res.render('shortlist', {
     nav: [
       { link: '/login', title: 'LogIn' },
