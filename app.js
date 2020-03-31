@@ -55,21 +55,17 @@ function catSelector(selection) {
   return 'All the cats';
 }
 
-const cat = catSelector('no');
-
 app.post('/shortlist', urlencodedParser, (req, res) => {
-  debug(req.body);
-  res.send(req.body['dog-friendly']);
-});
+  const dogFriendly = req.body['dog-friendly'];
+  const selectedCat = catSelector(dogFriendly);
 
-app.post('/shortlist', urlencodedParser, (req, res) => {
   res.render('shortlist', {
     nav: [
       { link: '/login', title: 'LogIn' },
       { link: '/SignUp', title: 'Sign Up' }
     ],
     title: 'Cat Match',
-    recomendation: cat
+    selectedCat
   });
 });
 
