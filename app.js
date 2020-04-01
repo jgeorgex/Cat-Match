@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const loginRouter = express.Router();
+const catRouter = require('./src/routes/catRoutes');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -37,6 +38,7 @@ loginRouter.route('/user').get((req, res) => {
 });
 
 app.use('/login', loginRouter);
+app.use('/shortlist', catRouter);
 
 app.get('/', (req, res) => {
   res.render('index', {
@@ -45,27 +47,6 @@ app.get('/', (req, res) => {
       { link: '/SignUp', title: 'Sign Up' }
     ],
     title: 'Cat Match'
-  });
-});
-
-function catSelector(selection) {
-  if (selection === 'yes') {
-    return 'American Bobtail';
-  }
-  return 'All the cats';
-}
-
-app.post('/shortlist', urlencodedParser, (req, res) => {
-  const dogFriendly = req.body['dog-friendly'];
-  const selectedCat = catSelector(dogFriendly);
-
-  res.render('shortlist', {
-    nav: [
-      { link: '/login', title: 'LogIn' },
-      { link: '/SignUp', title: 'Sign Up' }
-    ],
-    title: 'Cat Match',
-    selectedCat
   });
 });
 
