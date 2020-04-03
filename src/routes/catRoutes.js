@@ -218,7 +218,16 @@ const catDatabase = [
 ];
 
 catRouter.route('/').post((req, res) => {
-  const dogFriendlyCats = 'American Bobtail';
+  function getDogFriendlyCats() {
+    const dogFriendlyList = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < catDatabase.length; i++) {
+      dogFriendlyList.push(catDatabase[i].name);
+    }
+    return dogFriendlyList;
+  }
+
+  const dogFriendlyCats = getDogFriendlyCats();
 
   function catSelector(selection) {
     if (selection === 'yes') {
@@ -236,8 +245,7 @@ catRouter.route('/').post((req, res) => {
       { link: '/SignUp', title: 'Sign Up' }
     ],
     title: 'Cat Match',
-    selectedCat,
-    extra: 'extra data'
+    selectedCat
   });
 });
 
