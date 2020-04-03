@@ -218,28 +218,31 @@ const catDatabase = [
 ];
 
 catRouter.route('/').post((req, res) => {
+  const dogFriendlyCats = 'American Bobtail';
+
   function catSelector(selection) {
     if (selection === 'yes') {
-      return 'American Bobtail';
+      return dogFriendlyCats;
     }
     return 'All the cats';
   }
 
-  const dogFriendly = req.body['dog-friendly'];
-  const selectedCat = catSelector(dogFriendly);
+  const dogFriendlyChoice = req.body['dog-friendly'];
+  const selectedCat = catSelector(dogFriendlyChoice);
+
   res.render('shortlist', {
     nav: [
       { link: '/login', title: 'LogIn' },
       { link: '/SignUp', title: 'Sign Up' }
     ],
     title: 'Cat Match',
-    selectedCat
+    selectedCat,
+    extra: 'extra data'
   });
 });
 
 catRouter.route('/single').get((req, res) => {
-  const cat = catDatabase[2].name;
-  res.send(cat);
+  res.send('single route');
 });
 
 module.exports = catRouter;
