@@ -222,7 +222,9 @@ catRouter.route('/').post((req, res) => {
     const dogFriendlyList = [];
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < catDatabase.length; i++) {
-      dogFriendlyList.push(catDatabase[i].name);
+      if (catDatabase[i].dog_friendly === 5) {
+        dogFriendlyList.push(catDatabase[i].name);
+      }
     }
     return dogFriendlyList;
   }
