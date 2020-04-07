@@ -247,7 +247,10 @@ catRouter.route('/').post((req, res) => {
     if (dogFriendlySelection === 'yes' && childFriendlySelection === 'no') {
       return dogFriendlyCats;
     }
-    return childFriendlyCats;
+    if (dogFriendlySelection === 'no' && childFriendlySelection === 'yes') {
+      return childFriendlyCats;
+    }
+    return 'All cats';
   }
 
   const dogFriendlyChoice = req.body['dog-friendly'];
