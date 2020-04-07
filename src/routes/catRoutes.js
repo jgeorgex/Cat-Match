@@ -229,13 +229,25 @@ catRouter.route('/').post((req, res) => {
     return dogFriendlyList;
   }
 
+  function getChildFriendlyCats() {
+    const childFriendlyList = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < catDatabase.length; i++) {
+      if (catDatabase[i].child_friendly > 3) {
+        childFriendlyList.push(catDatabase[i].name);
+      }
+    }
+    return childFriendlyList;
+  }
+
+  const childFriendlyCats = getChildFriendlyCats();
   const dogFriendlyCats = getDogFriendlyCats();
 
   function catSelector(dogFriendlySelection, childFriendlySelection) {
     if (dogFriendlySelection === 'yes' && childFriendlySelection === 'no') {
       return dogFriendlyCats;
     }
-    return 'All the cats';
+    return childFriendlyCats;
   }
 
   const dogFriendlyChoice = req.body['dog-friendly'];
