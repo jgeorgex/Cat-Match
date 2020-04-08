@@ -240,8 +240,23 @@ catRouter.route('/').post((req, res) => {
     return childFriendlyList;
   }
 
+  function combinedList(dogFriendlyCats, childFriendlyCats) {
+    const catCombo = childFriendlyCats;
+    return catCombo;
+  }
+
+  function getAllCats() {
+    const allCatsList = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < catDatabase.length; i++) {
+      allCatsList.push(catDatabase[i].name);
+    }
+    return allCatsList;
+  }
+
   const childFriendlyCats = getChildFriendlyCats();
   const dogFriendlyCats = getDogFriendlyCats();
+  const allCats = getAllCats();
 
   function catSelector(dogFriendlySelection, childFriendlySelection) {
     if (dogFriendlySelection === 'yes' && childFriendlySelection === 'no') {
@@ -250,7 +265,11 @@ catRouter.route('/').post((req, res) => {
     if (dogFriendlySelection === 'no' && childFriendlySelection === 'yes') {
       return childFriendlyCats;
     }
-    return 'All cats';
+    if (dogFriendlySelection === 'yes' && childFriendlySelection === 'yes') {
+      const comboList = combinedList(childFriendlyCats, dogFriendlyCats);
+      return comboList;
+    }
+    return allCats;
   }
 
   const dogFriendlyChoice = req.body['dog-friendly'];
