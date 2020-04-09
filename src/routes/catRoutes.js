@@ -5,16 +5,19 @@ const catRouter = express.Router();
 
 const unirest = require('unirest');
 
-const req = unirest('GET', 'https://api.thecatapi.com/v1/breeds');
+const req2 = unirest('GET', 'https://api.thecatapi.com/v1/breeds');
 
-function getCatDatabase() {
-  req.query({
+// const getcatsService = require('../services/catService');
+
+function getcatDatabase() {
+  req2.query({
     attach_breed: '0'
   });
-  req.headers({
-    'x-api-key': ''
+  req2.headers({
+    ''
   });
-  req.end(res => {
+  // eslint-disable-next-line no-shadow
+  req2.end(res => {
     if (res.error) throw new Error(res.error);
     const catDatabase = res.body;
     // eslint-disable-next-line no-console
@@ -23,7 +26,10 @@ function getCatDatabase() {
   });
 }
 
-const catDatabase = getCatDatabase();
+setTimeout(getcatDatabase, 5000, 'timer running');
+
+const catDatabase = getcatDatabase();
+// const catDatabase = getcatDatabase();
 
 // const catDatabase = [
 //   {
@@ -310,8 +316,8 @@ catRouter.route('/').post((req, res) => {
   });
 });
 
-// catRouter.route('/single').get((req, res) => {
-//   res.send('single route');
-// });
+catRouter.route('/single').get((req, res) => {
+  res.send('single route');
+});
 
 module.exports = catRouter;
