@@ -2,6 +2,8 @@
 
 A project to be built with JavaScript to learn more about Node, Express, Mocha, Jest, Heroku and Mongo.
 
+The site is hosted at http://hidden-gorge-72365.herokuapp.com/
+
 ## User Stories
 
 As a user <br>
