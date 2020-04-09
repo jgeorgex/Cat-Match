@@ -45,3 +45,4 @@ ejs - To dynamically render html with embeded JavaScript.
 $ npm install - to install all necessary dependancies <br>
 $ npm start - starts server and outputs port <br>
 \$ npm run lint - runs esLint <br>
+APIKEY - To add your own API key create 'environment.env' in the root folder and enter APIKEY='Your unique API key'
