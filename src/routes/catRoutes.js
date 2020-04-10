@@ -21,8 +21,6 @@ req.headers({
 req.end(res => {
   if (res.error) throw new Error(res.error);
   const catDatabase = res.body;
-  // eslint-disable-next-line no-console
-  console.log(catDatabase);
 
   catRouter.route('/').post((req, res) => {
     function getDogFriendlyCats() {
