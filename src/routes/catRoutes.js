@@ -35,12 +35,35 @@ req.end(res => {
       return dogFriendlyList;
     }
 
+    function getDogFriendlyCatsDescriptions() {
+      const dogFriendlyList = [];
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < catDatabase.length; i++) {
+        if (catDatabase[i].dog_friendly === 5) {
+          dogFriendlyList.push(` ${catDatabase[i].description}`);
+        }
+      }
+      // eslint-disable-next-line no-sequences
+      return dogFriendlyList;
+    }
+
     function getChildFriendlyCats() {
       const childFriendlyList = [];
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < catDatabase.length; i++) {
         if (catDatabase[i].child_friendly > 3) {
           childFriendlyList.push(` ${catDatabase[i].name}`);
+        }
+      }
+      return childFriendlyList;
+    }
+
+    function getChildFriendlyCatsDescriptions() {
+      const childFriendlyList = [];
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < catDatabase.length; i++) {
+        if (catDatabase[i].child_friendly > 3) {
+          childFriendlyList.push(` ${catDatabase[i].description}`);
         }
       }
       return childFriendlyList;
@@ -60,9 +83,23 @@ req.end(res => {
       return allCatsList;
     }
 
+    function getAllCatsDescriptions() {
+      const allCatsList = [];
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < catDatabase.length; i++) {
+        allCatsList.push(` ${catDatabase[i].description}`);
+      }
+      return allCatsList;
+    }
+
     const childFriendlyCats = getChildFriendlyCats();
     const dogFriendlyCats = getDogFriendlyCats();
+
+    const childFriendlyCatsDescriptions = getChildFriendlyCatsDescriptions();
+    const dogFriendlyCatsDescriptions = getDogFriendlyCatsDescriptions();
+
     const allCats = getAllCats();
+    const allCatsDescriptions = getAllCatsDescriptions();
 
     function catSelector(dogFriendlySelection, childFriendlySelection) {
       if (dogFriendlySelection === 'yes' && childFriendlySelection === 'no') {
@@ -78,14 +115,34 @@ req.end(res => {
       return allCats;
     }
 
-    // function getDecription(selectedCat) {
-    //   return catDatabase.id;
-    // }
+    function catDescriptionSelector(
+      dogFriendlySelection,
+      childFriendlySelection
+    ) {
+      if (dogFriendlySelection === 'yes' && childFriendlySelection === 'no') {
+        return dogFriendlyCatsDescriptions;
+      }
+      if (dogFriendlySelection === 'no' && childFriendlySelection === 'yes') {
+        return childFriendlyCatsDescriptions;
+      }
+      if (dogFriendlySelection === 'yes' && childFriendlySelection === 'yes') {
+        const comboList = combinedList(
+          childFriendlyCatsDescriptions,
+          dogFriendlyCatsDescriptions
+        );
+        return comboList;
+      }
+      return allCatsDescriptions;
+    }
 
     const dogFriendlyChoice = req.body['dog-friendly'];
     const childFriendlyChoice = req.body['child-friendly'];
 
     const selectedCat = catSelector(dogFriendlyChoice, childFriendlyChoice);
+    const selectedCatDescription = catDescriptionSelector(
+      dogFriendlyChoice,
+      childFriendlyChoice
+    );
 
     res.render('shortlist', {
       nav: [
@@ -93,7 +150,8 @@ req.end(res => {
         { link: '/SignUp', title: 'Sign Up' }
       ],
       title: 'Cat Match',
-      selectedCat
+      selectedCat,
+      selectedCatDescription
     });
   });
 });
