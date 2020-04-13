@@ -76,7 +76,21 @@
           </div>
           <div class="col-lg-8 align-self-baseline">
             <p class="text-white-75 font-weight-light mb-5">
-               <recomendation><%=selectedCat%></recomendation> <br>
+                <table style="width:100%">
+                    <tr>
+                      <th>Breed</th>
+                      <th>Description</th>
+                    </tr>
+                    <%for(let i=0; i<selectedCat.length; i++) {%>
+                    <tr>
+                    <td>
+                        <%=selectedCat[i]%>
+                        </td>
+                 
+                    </tr>
+                    <%}%>
+                  </table>
+               
               </select>
             </p>
           </div>
@@ -84,13 +98,13 @@
       </div>
     </header>
    
-    <footer class="bg-light py-5">
+    <!-- <footer class="bg-light py-5">
       <div class="container">
         <div class="small text-center text-muted">
           Copyright © 2020 - Start Bootstrap
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

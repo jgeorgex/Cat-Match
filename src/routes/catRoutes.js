@@ -31,6 +31,7 @@ req.end(res => {
           dogFriendlyList.push(` ${catDatabase[i].name}`);
         }
       }
+      // eslint-disable-next-line no-sequences
       return dogFriendlyList;
     }
 
@@ -76,6 +77,10 @@ req.end(res => {
       }
       return allCats;
     }
+
+    // function getDecription(selectedCat) {
+    //   return catDatabase.id;
+    // }
 
     const dogFriendlyChoice = req.body['dog-friendly'];
     const childFriendlyChoice = req.body['child-friendly'];
