@@ -51,7 +51,7 @@ req.end(res => {
       const childFriendlyList = [];
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < catDatabase.length; i++) {
-        if (catDatabase[i].child_friendly > 3) {
+        if (catDatabase[i].child_friendly === 5) {
           childFriendlyList.push(` ${catDatabase[i].name}`);
         }
       }
@@ -62,16 +62,11 @@ req.end(res => {
       const childFriendlyList = [];
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < catDatabase.length; i++) {
-        if (catDatabase[i].child_friendly > 3) {
+        if (catDatabase[i].child_friendly === 5) {
           childFriendlyList.push(` ${catDatabase[i].description}`);
         }
       }
       return childFriendlyList;
-    }
-
-    function combinedList(dogFriendlyCats, childFriendlyCats) {
-      const catCombo = childFriendlyCats;
-      return catCombo;
     }
 
     function getAllCats() {
@@ -109,8 +104,7 @@ req.end(res => {
         return childFriendlyCats;
       }
       if (dogFriendlySelection === 'yes' && childFriendlySelection === 'yes') {
-        const comboList = combinedList(childFriendlyCats, dogFriendlyCats);
-        return comboList;
+        return childFriendlyCats;
       }
       return allCats;
     }
@@ -126,11 +120,7 @@ req.end(res => {
         return childFriendlyCatsDescriptions;
       }
       if (dogFriendlySelection === 'yes' && childFriendlySelection === 'yes') {
-        const comboList = combinedList(
-          childFriendlyCatsDescriptions,
-          dogFriendlyCatsDescriptions
-        );
-        return comboList;
+        return childFriendlyCatsDescriptions;
       }
       return allCatsDescriptions;
     }

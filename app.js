@@ -39,13 +39,15 @@ loginRouter.route('/user').get((req, res) => {
 
 app.use('/login', loginRouter);
 
+app.get('/');
+
 app.get('/', (req, res) => {
   res.render('index', {
     nav: [
       { link: '/login', title: 'LogIn' },
       { link: '/SignUp', title: 'Sign Up' }
     ],
-    title: 'Cat Match'
+    title: { link: '/', title: 'Cat Match' }
   });
 });
 
