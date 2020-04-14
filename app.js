@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
       { link: '/login', title: 'LogIn' },
       { link: '/SignUp', title: 'Sign Up' }
     ],
-    title: { link: '/', title: 'Cat Match' }
+    title: 'Cat Match'
   });
 });
 
