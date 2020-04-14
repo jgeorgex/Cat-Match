@@ -4,6 +4,13 @@ A project being built with JavaScript to learn more about Node, Express, Mocha, 
 
 The app is hosted at http://hidden-gorge-72365.herokuapp.com/
 
+To Do
+
+- Refactor logic in shortlist.ejs
+- Breakout api call code in shortlist.ejs to services folder.
+- Once refactor complete write tests for routes.
+- Complete remaining user stories
+
 ## User Stories
 
 As a user <br>
