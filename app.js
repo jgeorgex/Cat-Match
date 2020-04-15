@@ -39,7 +39,7 @@ loginRouter.route('/user').get((req, res) => {
 
 app.use('/login', loginRouter);
 
-app.get('/');
+// app.get('/');
 
 app.get('/', (req, res) => {
   res.render('index', {
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
       { link: '/login', title: 'LogIn' },
       { link: '/SignUp', title: 'Sign Up' }
     ],
-    title: 'Cat Match'
+    title: { link: '/', title: 'Cat Match' }
   });
 });
 

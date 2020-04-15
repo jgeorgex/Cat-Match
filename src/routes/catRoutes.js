@@ -139,7 +139,7 @@ req.end(res => {
         { link: '/login', title: 'LogIn' },
         { link: '/SignUp', title: 'Sign Up' }
       ],
-      title: 'Cat Match',
+      title: { link: '/', title: 'Cat Match' },
       selectedCat,
       selectedCatDescription
     });
