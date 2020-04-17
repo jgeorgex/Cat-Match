@@ -8,11 +8,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const loginRouter = express.Router();
+const signupRouter = express.Router();
 const catRouter = require('./src/routes/catRoutes');
+// const authRouter = require('./src/routes/authRoutes');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use(morgan('tiny'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use(
   '/css',
@@ -33,13 +37,23 @@ loginRouter.route('/').get((req, res) => {
   res.send('Loginarama');
 });
 
+signupRouter.route('/').get((req, res) => {
+  res.render('signup', {
+    nav: [
+      { link: '/login', title: 'LogIn' },
+      { link: '/SignUp', title: 'Sign Up' }
+    ],
+    title: { link: '/', title: 'Cat Match' }
+  });
+});
+
 loginRouter.route('/user').get((req, res) => {
   res.send('Hello User');
 });
 
 app.use('/login', loginRouter);
 
-// app.get('/');
+app.use('/signup', signupRouter);
 
 app.get('/', (req, res) => {
   res.render('index', {
