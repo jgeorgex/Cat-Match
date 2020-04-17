@@ -1,11 +1,11 @@
-// const express = require('express');
-// const debug = require('debug')('app:authRoutes');
+/* eslint-disable no-console */
+const express = require('express');
 
-// const authRouter = express.Router();
+const authRouter = express.Router();
 
-// authRouter.route('/').post((req, res) => {
-//   debug('whats going on?');
-//   debug(req.body);
-// });
+authRouter.route('/signup').post((req, res) => {
+  console.log('whats going on?');
+  console.log(req.body);
+});
 
-// module.exports = authRouter;
+module.exports = authRouter;
