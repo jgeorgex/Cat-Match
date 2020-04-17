@@ -17,11 +17,9 @@ const authRouter = require('./src/routes/authRoutes');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-require('.src/config/passport.js')(app);
+require('./src/config/passport.js')(app);
 
 app.use(morgan('tiny'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({ secret: 'shhh' }));
 
