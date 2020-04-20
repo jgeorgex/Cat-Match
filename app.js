@@ -21,7 +21,13 @@ require('./src/config/passport.js')(app);
 
 app.use(morgan('tiny'));
 app.use(cookieParser());
-app.use(session({ secret: 'shhh' }));
+app.use(
+  session({
+    secret: 'shhh',
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
 app.use(express.static(path.join(__dirname, '/public/')));
 app.use(
