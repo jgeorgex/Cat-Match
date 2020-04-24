@@ -11,7 +11,8 @@ const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 3000;
 const loginRouter = express.Router();
-const signupRouter = express.Router();
+
+const signupRouter = require('./src/routes/signupRoutes');
 const catRouter = require('./src/routes/catRoutes');
 const authRouter = require('./src/routes/authRoutes');
 
@@ -47,16 +48,6 @@ app.set('view engine', 'ejs');
 
 loginRouter.route('/').get((req, res) => {
   res.send('Loginarama');
-});
-
-signupRouter.route('/').get((req, res) => {
-  res.render('signup', {
-    nav: [
-      { link: '/login', title: 'LogIn' },
-      { link: '/SignUp', title: 'Sign Up' }
-    ],
-    title: { link: '/', title: 'Cat Match' }
-  });
 });
 
 loginRouter.route('/user').get((req, res) => {
