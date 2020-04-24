@@ -10,8 +10,8 @@ const session = require('express-session');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const loginRouter = express.Router();
 
+const loginRouter = require('./src/routes/loginRoutes');
 const signupRouter = require('./src/routes/signupRoutes');
 const catRouter = require('./src/routes/catRoutes');
 const authRouter = require('./src/routes/authRoutes');
@@ -45,10 +45,6 @@ app.use(
 );
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
-
-loginRouter.route('/').get((req, res) => {
-  res.send('Loginarama');
-});
 
 app.use('/login', loginRouter);
 
