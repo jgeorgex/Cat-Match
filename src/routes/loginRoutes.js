@@ -3,7 +3,13 @@ const express = require('express');
 const loginRouter = express.Router();
 
 loginRouter.route('/').get((req, res) => {
-  res.send('Loginarama');
+  res.render('login', {
+    nav: [
+      { link: '/login', title: 'LogIn' },
+      { link: '/SignUp', title: 'Sign Up' }
+    ],
+    title: { link: '/', title: 'Cat Match' }
+  });
 });
 
 module.exports = loginRouter;

@@ -70,28 +70,17 @@
         >
           <div class="col-lg-10 align-self-end">
             <h1 class="text-uppercase text-white font-weight-bold">
-              FIND YOUR PUUURFECT CAT! 🐈
+              LOG IN! 🐈
             </h1>
             <hr class="divider my-4" />
           </div>
           <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 font-weight-light mb-5">
-                Select what you want from a cat to see which breeds are best for you....
-              <form id="cat-finder" method="post" action="/shortlist">
+                <form id="signUpForm" method="post" action="/auth/logIn">
                 <p class="text-white-75 font-weight-light mb-5">
-                <label for="dog-friendly">Do you want a dog friendly cat?</label>
-                <select id="dog-friendly" name="dog-friendly">
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select> <br><br>
-              </select>
-              <label for="child-friendly">Do you want a child friendly cat?</label>
-              <select id="child-friendly" name="child-friendly">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select><br><br>
-                <input type="submit" value="Submit">
-              </form>
+                User Name: <input name="username" id="username"/><br><br>
+                Password: <input type="password" name="password" id="password"/><br><br>
+                <input type="submit" value="Log In" />
+                </form>
               </select>
             </p>
           </div>
