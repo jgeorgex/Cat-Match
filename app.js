@@ -50,10 +50,6 @@ loginRouter.route('/').get((req, res) => {
   res.send('Loginarama');
 });
 
-loginRouter.route('/user').get((req, res) => {
-  res.send('Hello User');
-});
-
 app.use('/login', loginRouter);
 
 app.use('/signup', signupRouter);
