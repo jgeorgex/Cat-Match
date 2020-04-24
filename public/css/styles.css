@@ -1726,12 +1726,16 @@ pre code {
 .table-hover tbody tr:hover {
   color: #212529;
   background-color: rgba(0, 0, 0, 0.075);
+  border: 1px solid #dee2e6;
+
+
 }
 
 .table-primary,
 .table-primary > th,
 .table-primary > td {
   background-color: #fcd3c8;
+
 }
 .table-primary th,
 .table-primary td,
@@ -1852,20 +1856,23 @@ pre code {
 .table-light > th,
 .table-light > td {
   background-color: #fdfdfe;
+  border-color: black;
 }
 .table-light th,
 .table-light td,
 .table-light thead th,
 .table-light tbody + tbody {
-  border-color: #fbfcfc;
+  border-color: black;
 }
 
 .table-hover .table-light:hover {
   background-color: #ececf6;
+  border-color: black;
 }
 .table-hover .table-light:hover > td,
 .table-hover .table-light:hover > th {
   background-color: #ececf6;
+  border-color: black;
 }
 
 .table-dark,
@@ -1915,7 +1922,10 @@ pre code {
 
 .table-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #6c757d;
+  border-color: #fff;
+  border: 2;
+
 }
 .table-dark th,
 .table-dark td,
