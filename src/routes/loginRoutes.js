@@ -4,10 +4,7 @@ const loginRouter = express.Router();
 
 loginRouter.route('/').get((req, res) => {
   res.render('login', {
-    nav: [
-      { link: '/login', title: 'LogIn' },
-      { link: '/SignUp', title: 'Sign Up' }
-    ],
+    nav: [{ link: '/SignUp', title: 'Sign Up' }],
     title: { link: '/', title: 'Cat Match' }
   });
 });
