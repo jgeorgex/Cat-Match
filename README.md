@@ -2,14 +2,7 @@
 
 A project being built with JavaScript to learn more about Node, Express, Mocha, Jest, Heroku and Mongo.
 
-The app is hosted at http://hidden-gorge-72365.herokuapp.com/
-
-## To Do
-
-- Refactor logic in shortlist.ejs
-- Breakout api call code in shortlist.ejs to services folder.
-- Once refactor complete write tests for routes.
-- Complete remaining user stories
+The view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
 
 ## User Stories
 
@@ -41,6 +34,8 @@ I can delete a cat in my shortlist <br>
 
 Core technolohgies - JavaScript, Express & Node
 
+Testing Frameworks - Chai and Cypress.
+
 Heroku - For hosting / deployment.
 
 Chalk, debug and morgan - to help gain visibility when debugging.
@@ -70,6 +65,23 @@ $ npm install - to install all necessary dependancies <br>
 $ npm start - starts server and outputs port. It will run on port 4000 by default <br>
 \$ npm run lint - runs esLint <br>
 
+## Running Tests
+
+Chai tests<br>
+\$ npm test
+
+Cypress tests<br>
+\$ npx cypress open
+
+This will open up Cypress and display a list of tests that you can run. You can either select "Run all tests" located in the top right hand corner or you can choose the individual tests listed in the main window.
+
 ## API
 
 To add your own API key create 'environment.env' in the root folder and enter APIKEY='Your unique API key'
+
+## To Do
+
+- Refactor logic in shortlist.ejs
+- Breakout api call code in shortlist.ejs to services folder.
+- Once refactor complete write tests for routes.
+- Complete remaining user stories
