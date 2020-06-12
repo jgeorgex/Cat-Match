@@ -72,6 +72,7 @@ Chai tests<br>
 
 Cypress tests<br>
 \$ npx cypress open
+or cypress run
 
 This will open up Cypress and display a list of tests that you can run. You can either select "Run all tests" located in the top right hand corner or you can choose the individual tests listed in the main window.
 
