@@ -3,3 +3,6 @@ node_js:
   - 12.14.1
 
 install: npm install
+
+script:
+  - npm start & wait-on http://localhost:4000
