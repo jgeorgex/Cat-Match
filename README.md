@@ -1,6 +1,8 @@
 ## Cat Match (WIP)
 
-A project being built with JavaScript to learn more about Node, Express, Mocha, Jest, Heroku and Mongo.
+[![Build Status](https://travis-ci.org/jgeorgex/Cat-Match.svg?branch=master)](https://travis-ci.org/jgeorgex/Cat-Match)
+
+A project being built with JavaScript to learn more about Node, Express, Mocha, Chai, Heroku, Tavis and Mongo.
 
 The view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
 
@@ -38,11 +40,13 @@ Testing Frameworks - Chai and Cypress.
 
 Heroku - For hosting / deployment.
 
+Travis CI - For continuous integration.
+
 Chalk, debug and morgan - to help gain visibility when debugging.
 
 Path - To simplify refrences to file directory paths by providing the join method.
 
-Bootstrap - To make CSS easier.
+Bootstrap - For CSS styling.
 
 jQuery - For event handling.
 
