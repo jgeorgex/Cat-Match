@@ -6,3 +6,4 @@ install: npm install
 
 script:
   - npm start & wait-on http://localhost:4000
+  - cypress run
