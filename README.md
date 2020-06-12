@@ -1,5 +1,7 @@
 ## Cat Match (WIP)
 
+[![Build Status](https://travis-ci.org/jgeorgex/Cat-Match.svg?branch=master)](https://travis-ci.org/jgeorgex/Cat-Match)
+
 A project being built with JavaScript to learn more about Node, Express, Mocha, Chai, Heroku, Tavis and Mongo.
 
 The view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
