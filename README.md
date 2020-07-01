@@ -4,7 +4,7 @@
 
 A project being built with JavaScript to learn more about Node, Express, Mocha, Chai, Heroku, Tavis and Mongo.
 
-The view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
+To view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
 
 ## User Stories
 
