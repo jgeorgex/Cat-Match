@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/jgeorgex/Cat-Match.svg?branch=master)](https://travis-ci.org/jgeorgex/Cat-Match)
 
-A project being built with JavaScript to learn more about Node, Express, Mocha, Chai, Heroku, Tavis and Mongo.
+A project built with JavaScript to learn more about Node, Express, Mocha, Chai, Heroku and Tavis CI.
 
 To view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
 
@@ -11,26 +11,6 @@ To view the deployed app go to http://hidden-gorge-72365.herokuapp.com/
 As a user <br>
 So I can find out what cat is best for me <br>
 I can fill out a questionaire and get a shortlist of cats <br>
-
-As a user <br>
-So I can see what the cats I've been recomended look like <br>
-My shotlist of cats include an image for each cat <br>
-
-As a user <br>
-So I can save my shortlist of cats <br>
-I can create an account which saves my shortlist <br>
-
-As a user <br>
-So I can view saved shortlist of cats <br>
-I can log in to my account and view my shortlist of cats <br>
-
-As a user <br>
-So I can add cats I've seen to my shortlist <br>
-I can upload an image and information about a new cat to my shortlist <br>
-
-As a user <br>
-So I can narrow down my shortlist <br>
-I can delete a cat in my shortlist <br>
 
 ## Tools & Technologies
 
